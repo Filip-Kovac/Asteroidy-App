@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.MainPage">
@@ -7,7 +7,8 @@
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label x:Name="Asteroids"  HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <Button x:Name="but" Text="Načíst" Clicked="But_clicked"/>
+        <Button x:Name="but" Text="Aktualizovat" Clicked="But_Clicked"/>
     </StackLayout>
 
 </ContentPage>
+
