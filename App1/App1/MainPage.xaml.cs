@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -56,12 +56,16 @@ namespace App1
                     AllAsteroids asteroid = JsonConvert.DeserializeObject<AllAsteroids>(sr.ReadToEnd());
                 }
             }
-            Label l = new Label();
-            foreach (var item in asteroid.near_earth_objects.asteroid)
+            Label l = new Label(); // nevím jak to mám lépe udělat, nefunguej mi emulace takže nevím jak to vypadá
+            foreach (var item in asteroid.asteroid)
             {
-                l.Text += $"Asteroid {item.name}";
-                Console.WriteLine(item.name);
+                l.Text += $"Asteroid {item.Value} \n";
             }
+        }
+
+        private void but_Clicked_1(object sender, EventArgs e)
+        {
+
         }
     }
 
@@ -170,7 +174,8 @@ namespace App1
         [JsonProperty("element_count")]
         public int element_count { get; set; }
         [JsonProperty("near_earth_objects")]
-        public Near_earth_objects near_earth_objects { get; set; }
+        public Dictionary<string, List<Asteroid>> asteroid { get; set; } //poradil Vojtěch
+        //public Near_earth_objects near_earth_objects { get; set; }
     }
     public class Links
     {
@@ -181,9 +186,9 @@ namespace App1
         [JsonProperty("self")]
         public string self { get; set; }
     }
-    public class Near_earth_objects
-    {
-        [JsonProperty("2021-12-12")]
-        public List<Asteroid> asteroid { get; set; }
-    }
+    //public class Near_earth_objects
+    //{
+        //[JsonProperty("2021-12-12")]
+        //public List<Asteroid> asteroid { get; set; }
+    //}
 }
